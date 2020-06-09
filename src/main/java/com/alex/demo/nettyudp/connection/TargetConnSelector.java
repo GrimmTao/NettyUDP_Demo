@@ -10,7 +10,7 @@ import java.util.Map;
  * @Created 2018年11月9日 下午1:47:33
  * @Description
  *              <p>
- *              连接实例挑选规则
+ *              连接实例选择器
  */
 public interface TargetConnSelector {
 
