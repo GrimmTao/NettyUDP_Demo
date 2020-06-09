@@ -47,9 +47,6 @@ public class UDPServer implements Connection, SmartLifecycle, UdpCallback {
 	@Autowired
 	private MessageCodec codec;
 
-	@Value("${nettyudp.local.ip}")
-	private String localIP;
-
 	private Channel channel;
 
 	private int port;
@@ -132,7 +129,7 @@ public class UDPServer implements Connection, SmartLifecycle, UdpCallback {
 			}
 		});
 		try {
-			ChannelFuture future = bootstrap.bind(localIP, port).sync().await();
+			ChannelFuture future = bootstrap.bind(port).sync().await();
 			channel = future.channel();
 			log.info("bind:" + channel.localAddress());
 		} catch (Exception e) {
